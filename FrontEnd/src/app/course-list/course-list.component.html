@@ -1,0 +1,40 @@
+<nav class="navbar navbar-default col-md-offset-2 col-md-8" style="margin-top:8px; background-color: white; border-top-left-radius:0px; border-top-right-radius:0px;">
+  <table class="table table-striped" style="margin-top:20px;">
+    <tr>
+      <th><label>Course Code</label></th>
+      <th><label>Course Name</label></th>
+      <th><label></label></th>
+    </tr>
+    <tr *ngFor="let x of data.courseList">
+      <td>{{ x.course_code }}</td>
+      <td>{{ x.course_name }}</td>
+      <td>
+        <button class="btn btn-default" type="button" (click)="tambah(x.$key)"> 
+        <span class="glyphicon glyphicon-trash"></span>  Add</button>
+      </td>
+    </tr>
+  </table>
+</nav>
+
+<nav class="navbar navbar-default navbar-header col-xs-12 col-md-offset-2 col-md-8" style="margin-bottom: 0px; padding-top: 15px; border-bottom-left-radius:0px; border-bottom-right-radius:0px;">
+  Add Course
+</nav>
+
+<div class="form-horizontal col-xs-12 col-md-offset-2 col-md-8" style="margin-top : 15px">
+  <div class="form-group">
+    <label for="" class="control-label col-xs-4">Course Code</label>
+    <div class="col-xs-8">
+    <input type="text" name="" id="" class="form-control" [(ngModel)]="course_code">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="" class="control-label col-xs-4">Course Name</label>
+    <div class="col-xs-8">
+    <input type="text" name="" id="" class="form-control" [(ngModel)]="course_name">
+    </div>
+  </div>
+
+  <div class="col-xs-offset-4" style="margin-bottom : 15px;">
+  <button type="button" class="btn btn-default" (click)="AddCourse()"><b>+</b> Add Course</button>
+  </div>
+</div>
